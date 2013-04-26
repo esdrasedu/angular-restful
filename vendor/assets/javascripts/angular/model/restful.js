@@ -1,7 +1,8 @@
-angular.module('model', ['ng']).
+angular.module('restful', ['ngResource']).
 factory('$restful', ['$resource', function($resource) {
 
-    function ResfullFctory( url, opts ) {
+    function RestfulFactory( url, opts ) {
+
         var defaultActions = {
             'get':      {method:'GET'},
             'query':    {method:'GET', isArray:true},
@@ -9,13 +10,19 @@ factory('$restful', ['$resource', function($resource) {
             'update':   {method:'PUT'},
             'destroy':  {method:'DELETE'}
         };
+
         var optDefault = {
             params:     {},
             actions:    {},
             only:       [],
             except:     []
         };
+
+        opts = angular.extend({}, optDefault, opts);
+        opts['actions'] = angular.extend({}, defaultActions, opts['actions']);
+
+        return $resource(url, opts['params'], opts['actions']);
     };
 
-    return ResfullFctory;
-});
+    return $resource;
+}]);
