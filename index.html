@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular-Restful</title>
+    <meta name="description" content="">
+    <meta name="author" content="Esdras Eduardo">
+    
+    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
+    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap.min.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap-prettify.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-loader.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-mocks.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-resource.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-scenario.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Angular-restful</a>
+          <a></a>
+          <div class="navbar-content">
+            <ul class="nav ">
+              <li class="active">
+                <a href="#">Home</a> 
+              </li>
+              <li>
+                <a href="#">Install</a> 
+              </li>
+              <li>
+                <a href="#">Config</a> 
+              </li>
+              <li>
+                <a href="#">Docs</a> 
+              </li>
+              <li>
+                <a href="#">Sample</a> 
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-unit center hidden-phone">
+        <h1>Angular-Restful</h1>
+        <p>Angular factory for restful, simple and easy.</p>
+        <p></p>
+        <a class="btn btn-large"><i class="icon-download-alt"></i>Github project<br></a>
+        <a class="btn btn-primary btn-large"><i class="icon-download-alt icon-white"></i> Download</a>
+        <span class="disabled">version 0.0.2</span> 
+      </div>
+      <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
+      <div class="row main-features"></div>
+      <h1>Install</h1>
+      <h3>Gem</h3>
+      <div class="well">gem install angular-restful
+        <br> 
+      </div>
+      <div></div>
+      <h3>Bundle</h3>
+      <div class="well">gem "angular-restful"</div>
+      <h3>Manual</h3>
+      <p>You can install manually, but is not recommended</p>
+      <pre class="prettyprint linenums">
+        <span style="color: rgb(0, 0, 0); font-family: Consolas, 'Lucida Console', monospace; font-size: 12px; line-height: normal;">&lt;script src="lib/maskedinput/jquery.maskedinput.js"&gt;&lt;/script&gt;</span>
+        <br> 
+      </pre>
+      <h1>Config</h1>
+      <p>Angular-restful depends on the
+        <a href="http://angularjs.org/">angular</a> , if you don't know how install and config, please go to
+        <a href="http://angularjs.org/">angular project</a> 
+      </p>
+      <div class="well">angular.module('yourModule', ['restful']);</div>
+      <h1>Docs</h1>
+      <h3>RestfulFactory</h3>
+      <div class="well"></div>
+      <h4>Options</h4>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>params</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>actions</td>
+            <td>
+              <span style="background-color: rgb(249, 249, 249);">Object</span>
+              <br> 
+            </td>
+            <td>{}</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>only</td>
+            <td>Array</td>
+            <td>null</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>except</td>
+            <td>
+              <span style="background-color: rgb(249, 249, 249);">Array</span>
+              <br> 
+            </td>
+            <td>null</td>
+            <td>Michael</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Restful</h3>
+      <div class="well"></div>
+      <h4>Options</h4>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>params</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>
+              <span style="background-color: rgb(249, 249, 249);">Object</span>
+              <br> 
+            </td>
+            <td>{}</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>resources</td>
+            <td>Array</td>
+            <td>null</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>success</td>
+            <td>Function</td>
+            <td>null</td>
+            <td>Michael</td>
+          </tr>
+          <tr>
+            <td>error</td>
+            <td>Function</td>
+            <td>null</td>
+            <td>Michael</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1>Sample</h1>
+    </div>
+  </body>
+<html>
