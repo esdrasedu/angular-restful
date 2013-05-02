@@ -1,16 +1,23 @@
 // Karma configuration
-// Generated on Wed Apr 24 2013 20:57:39 GMT-0300 (BRT)
+// Generated on Fri Apr 26 2013 22:34:56 GMT-0300 (BRT)
 
 
 // base path, that will be used to resolve files and exclude
-basePath = '';
+basePath = './';
 
 
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'test/unit/**/*Spec.js'
+  'test/lib/javascripts/angular/angular.min.js',
+  'test/lib/javascripts/angular/angular-bootstrap.min.js',
+  'test/lib/javascripts/angular/angular-loader.min.js',
+  'test/lib/javascripts/angular/angular-sanitize.min.js',
+  'test/lib/javascripts/angular/angular-mocks.js',
+  'test/lib/javascripts/matchers/matchers.js',
+  'app/assets/javascripts/restful.js',
+  'test/unit/javascripts/**/*Spec.js'
 ];
 
 
@@ -39,7 +46,7 @@ colors = true;
 
 // level of logging
 // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_INFO;
+logLevel = LOG_DEBUG;
 
 
 // enable / disable watching file and executing tests whenever any file changes
