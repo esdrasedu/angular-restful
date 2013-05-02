@@ -8,8 +8,25 @@
     
     <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap.min.css" />
+	
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.0.0/jquery-2.0.0.min.js"></script>
+	
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-affix.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-alert.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-button.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-scrollspy.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-tab.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-transition.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-typeahead.js"></script>
+
+	<script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap-prettify.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-cookies.min.js"></script>
@@ -19,31 +36,37 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-scenario.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular.min.js"></script>
+    	
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     
+	<script type="text/javascript" src="restful.js"></script>
+	
+	<script type="text/javascript" src="apps/angular-restful.js"></script>
+	<script type="text/javascript" src="services/angular-restful.js"></script>
+	
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" ng-app="angular-restful">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#">Angular-restful</a>
           <a></a>
           <div class="navbar-content">
-            <ul class="nav ">
+            <ul class="nav">
               <li class="active">
-                <a href="#">Home</a> 
+                <a href="#home">Download</a> 
               </li>
               <li>
-                <a href="#">Install</a> 
+                <a href="#install">Install</a> 
               </li>
               <li>
-                <a href="#">Config</a> 
+                <a href="#config">Config</a> 
               </li>
               <li>
-                <a href="#">Docs</a> 
+                <a href="#docs">Docs</a> 
               </li>
               <li>
-                <a href="#">Sample</a> 
+                <a href="#sample">Sample</a> 
               </li>
             </ul>
           </div>
@@ -51,39 +74,84 @@
       </div>
     </div>
     <div class="container">
-      <div class="hero-unit center hidden-phone">
+      <div class="hero-unit center hidden-phone" id="home">
         <h1>Angular-Restful</h1>
         <p>Angular factory for restful, simple and easy.</p>
         <p></p>
-        <a class="btn btn-large"><i class="icon-download-alt"></i>Github project<br></a>
-        <a class="btn btn-primary btn-large"><i class="icon-download-alt icon-white"></i> Download</a>
-        <span class="disabled">version 0.0.2</span> 
+        <a class="btn btn-large" target="_blank" href="https://github.com/esdrasedu/angular-restful"><i class="icon-download-alt"></i>Github project<br></a>
+        <a class="btn btn-primary btn-large" target="_blank" href="https://github.com/esdrasedu/angular-restful/tags"><i class="icon-download-alt icon-white"></i> Download</a>
+        <span class="disabled">version {{gem.version}}</span> 
       </div>
       <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
-      <div class="row main-features"></div>
+      <h1 id="install">&nbsp;</h1>
       <h1>Install</h1>
       <h3>Gem</h3>
-      <div class="well">gem install angular-restful
-        <br> 
-      </div>
-      <div></div>
-      <h3>Bundle</h3>
-      <div class="well">gem "angular-restful"</div>
+	  <pre class="prettyprint linenums">
+gem install angular-restful
+</pre>
+	  <h3>Bundle</h3>
+	  <pre class="prettyprint linenums">
+gem "angular-restful"
+</pre>
       <h3>Manual</h3>
       <p>You can install manually, but is not recommended</p>
-      <pre class="prettyprint linenums">
-        <span style="color: rgb(0, 0, 0); font-family: Consolas, 'Lucida Console', monospace; font-size: 12px; line-height: normal;">&lt;script src="lib/maskedinput/jquery.maskedinput.js"&gt;&lt;/script&gt;</span>
-        <br> 
-      </pre>
+	  <pre class="prettyprint linenums">
+&lt;script src=&quot;lib/maskedinput/jquery.maskedinput.js&quot;&gt;&lt;/script&gt;
+</pre>
+	  <h1 id="config">&nbsp;</h1>
       <h1>Config</h1>
       <p>Angular-restful depends on the
-        <a href="http://angularjs.org/">angular</a> , if you don't know how install and config, please go to
-        <a href="http://angularjs.org/">angular project</a> 
+        <a target="_blank" href="http://angularjs.org/">angular</a>, if you don't know how install and config, please go to
+        <a target="_blank" href="http://angularjs.org/">angular project</a> 
       </p>
-      <div class="well">angular.module('yourModule', ['restful']);</div>
+	  <pre class="prettyprint linenums">
+angular.module('yourModule', ['restful']);
+</pre>
+	  <h1 id="docs">&nbsp;</h1>
       <h1>Docs</h1>
+	  <h3>$restful</h3>
+      <pre class="prettyprint linenums">
+angular.module('app', ['restful'])
+.run(function($restful){
+	$restful.$baseURL = 'http://localhost:3000';
+	$restful.$defaultActions['list'] = {method:'GET', isArray:true, params:{limit: 30}};
+});
+</pre>
+      <h4>Attributes</h4>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$defaultActions</td>
+            <td>Object</td>
+            <td>{</br>'get':{method:'GET'},</br>'query':{method:'GET', isArray:true},</br>'create':{method:'POST'},</br>'update':{method:'PUT'},</br>'destroy':{metresourcehod:'DELETE'</br>}</td>
+            <td>These methods are default of resource rails, can be modified before you create restful</td>
+          </tr>
+          <tr>
+            <td>$baseURL</td>
+            <td>String</td>
+            <td>""</td>
+            <td>Url based of restful</td>
+          </tr>
+        </tbody>
+      </table>
       <h3>RestfulFactory</h3>
-      <div class="well"></div>
+      <pre class="prettyprint linenums">
+angular.module('service', ['restful'])
+.factory('User', ['$restful', function($restful) {
+	return $restful('/user', {except:['query']});
+}])
+.factory('Post', ['$restful', function($restful) {
+	return $restful('/posts/:id');
+}]);
+</pre>
       <h4>Options</h4>
       <table class="table table-bordered table-striped">
         <thead>
@@ -99,36 +167,45 @@
             <td>params</td>
             <td>Object</td>
             <td>{}</td>
-            <td>Michael</td>
+            <td>Default values for url parameters. Equals of $resource</td>
           </tr>
           <tr>
             <td>actions</td>
-            <td>
-              <span style="background-color: rgb(249, 249, 249);">Object</span>
-              <br> 
-            </td>
+            <td>Object</td>
             <td>{}</td>
-            <td>Michael</td>
+            <td>Hash with declaration of custom action that should extend the default set of restful actions.</br>Equals of $resource ({method:?, params:?, isArray:?})</td>
+          </tr>
+		  <tr>
+            <td>baseURL</td>
+            <td>String</td>
+            <td>null</td>
+            <td>If you need change override $restful.$baseURL</td>
           </tr>
           <tr>
             <td>only</td>
             <td>Array</td>
             <td>null</td>
-            <td>Michael</td>
+            <td>Add methods default only if have key in this array</td>
           </tr>
           <tr>
             <td>except</td>
-            <td>
-              <span style="background-color: rgb(249, 249, 249);">Array</span>
-              <br> 
-            </td>
+            <td>Array</td>
             <td>null</td>
-            <td>Michael</td>
+            <td>Add all methods default except if have key in this array</td>
           </tr>
         </tbody>
       </table>
       <h3>Restful</h3>
-      <div class="well"></div>
+            <pre class="prettyprint linenums">
+angular.module('app', ['service'])
+.run(function(User, Post){
+	var user = new User();
+	var post = new Post({contet:'Test restful'});
+	var post = post.$create([user], function(){
+		post.$destroy();
+	});
+});
+</pre>
       <h4>Options</h4>
       <table class="table table-bordered table-striped">
         <thead>
@@ -144,38 +221,65 @@
             <td>params</td>
             <td>Object</td>
             <td>{}</td>
-            <td>Michael</td>
+            <td>Default values for url parameters. Equals of $resource</td>
           </tr>
           <tr>
             <td>data</td>
-            <td>
-              <span style="background-color: rgb(249, 249, 249);">Object</span>
-              <br> 
-            </td>
+            <td>Object</td>
             <td>{}</td>
-            <td>Michael</td>
+            <td>Post data, Equals of $resource</td>
           </tr>
           <tr>
             <td>resources</td>
             <td>Array</td>
             <td>null</td>
-            <td>Michael</td>
+            <td>Array with restful instances, the order of array is important because route follows this order</br>This array is extend of result, for resets only set array empty</td>
           </tr>
           <tr>
             <td>success</td>
             <td>Function</td>
             <td>null</td>
-            <td>Michael</td>
+            <td>Function for success in request</td>
           </tr>
           <tr>
             <td>error</td>
             <td>Function</td>
             <td>null</td>
-            <td>Michael</td>
+            <td>Function for error in request</td>
           </tr>
         </tbody>
       </table>
+	  <h1 id="sample">&nbsp;</h1>
       <h1>Sample</h1>
-    </div>
+	  <p>Simple sample of User, Post, Tag, Category CRUD</p>
+	  
+	  <div class="bs-docs-example">
+		<ul id="myTab" class="nav nav-tabs">
+		  <li class="active"><a href="#appSample" data-toggle="tab">App</a></li>
+		  <li><a href="#controllerSample" data-toggle="tab">Controller</a></li>
+		  <li><a href="#ServiceSample" data-toggle="tab">Service</a></li>
+		  <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#viewSample" data-toggle="tab">User</a></li>
+			</ul>
+		  </li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+		  <div class="tab-pane fade in active" id="appSample">
+			<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+		  </div>
+		  <div class="tab-pane fade" id="controllerSample">
+			<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+		  </div>
+		  <div class="tab-pane fade" id="ServiceSample">
+			<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+		  </div>
+		  <div class="tab-pane fade" id="viewSample">
+			<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+		  </div>
+		</div>
+	  </div>
+	  <h3>Demo</h3>
   </body>
 <html>
