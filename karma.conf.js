@@ -16,8 +16,8 @@ files = [
   'test/lib/javascripts/angular/angular-sanitize.min.js',
   'test/lib/javascripts/angular/angular-mocks.js',
   'test/lib/javascripts/matchers/matchers.js',
-  'app/assets/javascripts/restful.js',
-  'test/unit/javascripts/**/*Spec.js'
+  'vendor/assets/javascripts/angular/model/restful.js',
+  'test/unit/javascripts/angular/model/*Spec.js'
 ];
 
 

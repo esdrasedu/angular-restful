@@ -79,6 +79,18 @@ describe("singular-restful", function() {
         $restful('URL').query();
     });
 
+    it('should create no route with $baseURL', function() {
+        $restful.$baseURL = "http://localhost:3000";
+        var Parent = $restful('/Parent');
+        var ParentPort = $restful('/Parent', {baseURL:"http://localhost:4000"});
+
+        $httpBackend.when('GET', 'http://localhost:3000/Parent').respond('{}');
+        $httpBackend.when('GET', 'http://localhost:4000/Parent').respond('{}');
+
+        Parent.get();
+        ParentPort.get();
+
+    });
 
     it('should ignore slashes of undefinend parameters', function() {
         var R = $restful('/Path/:a/:b/:c');
