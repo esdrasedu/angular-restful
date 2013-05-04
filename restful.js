@@ -340,7 +340,7 @@
         'destroy':  {method:'DELETE'}
       };
 	  
-	  RestfulFactory.$baseURL = '';
+      RestfulFactory.$baseURL = '';
   
       return RestfulFactory;
   }]);
