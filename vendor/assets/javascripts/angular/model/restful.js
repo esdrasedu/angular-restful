@@ -1,6 +1,6 @@
 (function (undefined) {
     angular.module('restful', ['ng']).
-        factory('$route', function($http, $parse) {
+        factory('$route_restful', function($http, $parse) {
 
             var forEach = angular.forEach;
 
@@ -20,13 +20,13 @@
                     replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
             }
 
-            function RouteFactory(template, defaults) {
+            function RouteRestfulFactory(template, defaults) {
                 this.template = template = template + '#';
                 this.defaults = defaults || {};
                 this.urlParams = {};
             }
 
-            RouteFactory.prototype = {
+            RouteRestfulFactory.prototype = {
                 getUrl: function(params, actionUrl) {
                     var self = this,
                         url = actionUrl || self.template,
@@ -103,9 +103,9 @@
                     return paramsReturn;
                 }
             };
-            return RouteFactory;
+            return RouteRestfulFactory;
         }).
-        factory('$restful', ['$http', '$parse', '$route', function($http, $parse, $route) {
+        factory('$restful', ['$http', '$parse', '$route_restful', function($http, $parse, $route_restful) {
 
             var noop = angular.noop,
                 forEach = angular.forEach,
@@ -163,7 +163,7 @@
                     actions = newActions;
                 }
 
-                var route = new $route(url);
+                var route = new $route_restful(url);
 
                 function extractParams(data, actionParams){
                     var ids = {};
@@ -177,7 +177,6 @@
 
                 function Restful(value){
                     copy(value || {}, this);
-                    this.$resources = [];
                     this.$getUrl = function(){
                         return route.getUrl(this);
                     };
@@ -213,11 +212,10 @@
                                 }
                             case 2:
                                 if(isFunction(a2)){
-                                    if(isFunction(a1)){
+                                    if(isFunction(a1))
                                         error = a2;
-                                    } else {
+                                    else
                                         success = a2;
-                                    }
                                 } else if(isArray(a2)){
                                     resources = a2;
                                 } else {
@@ -233,6 +231,7 @@
                             default:
                                 throw "Expected between 0-5 arguments [params, data, resources, success, error], got " + arguments.length + " arguments.";
                         }
+
                         var value = this instanceof Restful ? this : (action.isArray ? [] : new Restful(data));
                         var httpConfig = {},
                             promise;
