@@ -1,6 +1,6 @@
 (function (undefined) {
   angular.module('restful', ['ng']).
-  factory('$route', function($http, $parse) {
+  factory('$route_restful', function($http, $parse) {
 
       var forEach = angular.forEach;
 
@@ -20,13 +20,13 @@
               replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
       }
 
-      function RouteFactory(template, defaults) {
+      function RouteRestfulFactory(template, defaults) {
           this.template = template = template + '#';
           this.defaults = defaults || {};
           this.urlParams = {};
       }
 
-      RouteFactory.prototype = {
+      RouteRestfulFactory.prototype = {
           getUrl: function(params, actionUrl) {
               var self = this,
                   url = actionUrl || self.template,
@@ -103,9 +103,9 @@
               return paramsReturn;
           }
       };
-      return RouteFactory;
+      return RouteRestfulFactory;
   }).
-  factory('$restful', ['$http', '$parse', '$route', function($http, $parse, $route) {
+  factory('$restful', ['$http', '$parse', '$route_restful', function($http, $parse, $route_restful) {
 
       var noop = angular.noop,
           forEach = angular.forEach,
@@ -163,7 +163,7 @@
           actions = newActions;
         }
         
-        var route = new $route(url);
+        var route = new $route_restful(url);
     
         function extractParams(data, actionParams){
           var ids = {};

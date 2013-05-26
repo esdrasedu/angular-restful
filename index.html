@@ -40,10 +40,11 @@
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     
 	<script type="text/javascript" src="restful.js"></script>
-	
+
 	<script type="text/javascript" src="apps/angular-restful.js"></script>
+	<script type="text/javascript" src="controllers/UserController.js"></script>
 	<script type="text/javascript" src="services/angular-restful.js"></script>
-	
+
   </head>
   <body data-spy="scroll" data-target=".navbar" ng-app="angular-restful">
     <div class="navbar navbar-fixed-top">
@@ -281,5 +282,7 @@ angular.module('app', ['service'])
 		</div>
 	  </div>
 	  <h3>Demo</h3>
+      <div ng-include="'views/index.html'">
+      </div>
   </body>
 <html>
