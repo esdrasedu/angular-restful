@@ -1,0 +1,22 @@
+<div ng-include="'./views/user/form.html'" ng-show="user"></div>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>
+            <a ng-click="create()"><i class="icon-plus-sign"></i></a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users | orderBy:'name'">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <a ng-click="edit(user)"><i class="icon-pencil"></i></a>
+            <a ng-click="remove(user)"><i class="icon-remove"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
