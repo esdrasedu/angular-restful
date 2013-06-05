@@ -8,9 +8,6 @@ angular.module('angular-restful.service', ['restful'])
 .factory('Post', ['$restful', function($restful) {
 	return $restful('/posts/:id', {params:{id:'@id'}});
 }])
-.factory('Tag', ['$restful', function($restful) {
-	return $restful('/tags/:id', {params:{id:'@id'}});
-}])
 .factory('Category', ['$restful', function($restful) {
 	return $restful('/categories/:id', {params:{id:'@id'}});
 }]);

@@ -1,7 +1,6 @@
 <div>
     <ul class="breadcrumb">
-        <li><a href="#/samples/users">Users</a> <span class="divider">/</span></li>
-        <li class="active"><a href="#">User</a></li>
+        <li ng-repeat="(key, path) in breadcrumb"><a class="btn-link" ng-click="changePath(key)">{{path}}</a> <span ng-hide="$last" class="divider">/</span></li>
     </ul>
 </div>
 <div ng-view></div>

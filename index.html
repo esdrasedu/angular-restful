@@ -6,44 +6,24 @@
     <meta name="description" content="">
     <meta name="author" content="Esdras Eduardo">
     
-    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
-    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.1/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 	
-	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.0.0/jquery-2.0.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-affix.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-alert.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-button.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-carousel.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-collapse.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-dropdown.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-popover.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-scrollspy.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-tab.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-tooltip.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-transition.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap-prettify.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-cookies.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-loader.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-mocks.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-resource.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-sanitize.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/angularjs/1.1.2/angular-scenario.js"></script>
-    	
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    
+	<script type="text/javascript" src="js/angular.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="css/prettify.css" />
+   	<script type="text/javascript" src="js/prettify.js"></script>
+
 	<script type="text/javascript" src="restful.js"></script>
 
 	<script type="text/javascript" src="apps/angular-restful.js"></script>
-	<script type="text/javascript" src="controllers/UserController.js"></script>
-	<script type="text/javascript" src="services/angular-restful.js"></script>
+    <script type="text/javascript" src="controllers/UserController.js"></script>
+    <script type="text/javascript" src="controllers/PostController.js"></script>
+    <script type="text/javascript" src="services/angular-restful.js"></script>
 
   </head>
   <body data-spy="scroll" data-target=".navbar" ng-app="angular-restful">
@@ -252,7 +232,7 @@ angular.module('app', ['service'])
       </table>
 	  <h1 id="sample">&nbsp;</h1>
       <h1>Sample</h1>
-	  <p>Simple sample of User, Post, Tag, Category CRUD</p>
+	  <p>Simple sample of User, Post, Category CRUD</p>
 	  
 	  <div class="bs-docs-example">
 		<ul id="myTab" class="nav nav-tabs">
@@ -262,27 +242,205 @@ angular.module('app', ['service'])
 		  <li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
 			<ul class="dropdown-menu">
-			  <li><a href="#viewSample" data-toggle="tab">User</a></li>
+			  <li><a href="#viewSampleUser" data-toggle="tab">User</a></li>
+			  <li><a href="#viewSamplePost" data-toggle="tab">Post</a></li>
 			</ul>
 		  </li>
 		</ul>
 		<div id="myTabContent" class="tab-content">
 		  <div class="tab-pane fade in active" id="appSample">
-			<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-		  </div>
+<pre class="prettyprint linenums">
+angular.module('angular-restful', ['angular-restful.service'])
+.config(function($httpProvider, $routeProvider) {
+
+    var views = './views';
+    $routeProvider.when('/users', {
+        templateUrl: views+'/user/list.html',
+        controller: UserController
+    }).when('/users/:id_user/posts', {
+        templateUrl: views+'/post/list.html',
+        controller: PostController
+    });
+})
+.run(function($rootScope, $restful){
+    $restful.$baseURL = 'http://localhost:3000';
+});
+</pre>
+          </div>
 		  <div class="tab-pane fade" id="controllerSample">
-			<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-		  </div>
+<pre class="prettyprint linenums">
+function UserController($scope, User){
+    $scope.users = User.query();
+    $scope.user = null;
+    $scope.create = function(){
+        $scope.user = new User();
+    };
+    $scope.cancel = function(){
+        $scope.user = null;
+    };
+    $scope.edit = function( $user ){
+        $scope.user = $user;
+    };
+    $scope.save = function(){
+        if( angular.isDefined($scope.user.id) ) {
+            $scope.user.$update(function(){
+                $scope.user = null;
+            });
+        } else {
+            $scope.user.$create(function( $user ){
+                $scope.users.unshift($user);
+                $scope.user = null;
+            });
+        }
+    };
+    $scope.remove = function( $user ){
+        $user.$destroy(function(){
+            $scope.users.splice($scope.users.indexOf($user), 1);
+        });
+    };
+    $scope.cancel = function(){
+        $scope.user = null;
+    };
+}
+function PostController($routeParams, $scope, User, Post, Category){
+    var id_user = $routeParams.id_user;
+    var user_current = new User({id: id_user});
+    $scope.posts = Post.query([user_current]);
+    $scope.categories = Category.query();
+    $scope.post = null;
+    $scope.create = function(){
+        $scope.post = new Post();
+    };
+    $scope.cancel = function(){
+        $scope.post = null;
+    };
+    $scope.edit = function( $post ){
+        $scope.post = $post;
+    };
+    $scope.save = function(){
+        if( angular.isDefined($scope.post.id) ) {
+            $scope.post.$update(function(){
+                $scope.post = null;
+            });
+        } else {
+            $scope.post.$create([user_current], function( $post ){
+                $scope.posts.unshift($post);
+                $scope.post = null;
+            });
+        }
+    };
+    $scope.remove = function( $post ){
+        $post.$destroy(function(){
+            $scope.posts.splice($scope.posts.indexOf($post), 1);
+        });
+    };
+    $scope.cancel = function(){
+        $scope.post = null;
+    };
+}
+</pre>
+          </div>
 		  <div class="tab-pane fade" id="ServiceSample">
-			<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-		  </div>
-		  <div class="tab-pane fade" id="viewSample">
-			<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-		  </div>
+<pre class="prettyprint linenums">
+angular.module('angular-restful.service', ['restful'])
+.factory('User', ['$restful', function($restful) {
+	return $restful('/users/:id', {params:{id:'@id'}});
+}])
+.factory('Post', ['$restful', function($restful) {
+	return $restful('/posts/:id', {params:{id:'@id'}});
+}])
+.factory('Category', ['$restful', function($restful) {
+	return $restful('/categories/:id', {params:{id:'@id'}});
+}]);
+</pre>
+          </div>
+		  <div class="tab-pane fade" id="viewSampleUser">
+<pre class="prettyprint linenums" ng-non-bindable>
+&lt;form name=&quot;form&quot;&gt;
+    &lt;div class=&quot;control-group&quot;&gt;
+        &lt;label&gt;Name&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; ng-model=&quot;user.name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;control-group&quot;&gt;
+        &lt;label&gt;E-mail&lt;/label&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; ng-model=&quot;user.email&quot;&gt;
+    &lt;/div&gt;
+    &lt;button ng-click=&quot;cancel()&quot; class=&quot;btn&quot;&gt;Cancel&lt;/button&gt;
+    &lt;button ng-click=&quot;save()&quot; class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+&lt;/form&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th style=&quot;width: 250px&quot;&gt;Name&lt;/th&gt;
+        &lt;th style=&quot;width: 150px&quot;&gt;E-mail&lt;/th&gt;
+        &lt;th style=&quot;width: 55px&quot;&gt;
+            &lt;a ng-click=&quot;create()&quot;&gt;&lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr ng-repeat=&quot;user in users | orderBy:'name'&quot;&gt;
+        &lt;td&gt;{{user.name}}&lt;/td&gt;
+        &lt;td&gt;{{user.email}}&lt;/td&gt;
+        &lt;td&gt;
+            &lt;a href=&quot;#/users/{{user.id}}/posts&quot; data-toggle=&quot;tooltip&quot; title=&quot;Posts&quot;&gt;&lt;i class=&quot;icon-list&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a ng-click=&quot;edit(user)&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a ng-click=&quot;remove(user)&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+          </div>
+            <div class="tab-pane fade" id="viewSamplePost">
+<pre class="prettyprint linenums" ng-non-bindable>
+&lt;form name=&quot;form&quot;&gt;
+     &lt;div class=&quot;control-group&quot;&gt;
+         &lt;label&gt;Content&lt;/label&gt;
+         &lt;textarea name=&quot;content&quot; ng-model=&quot;post.content&quot;&gt;&lt;/textarea&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;control-group&quot;&gt;
+         &lt;label&gt;Category&lt;/label&gt;
+         &lt;select name=&quot;category_id&quot; ng-model=&quot;post.category_id&quot;&gt;
+             &lt;option ng-repeat=&quot;category in categories&quot; value=&quot;{{category.id}}&quot; ng-selected=&quot;category.id==post.category_id&quot;&gt;{{category.name}}&lt;/option&gt;
+         &lt;/select&gt;
+     &lt;/div&gt;
+     &lt;button ng-click=&quot;cancel()&quot; class=&quot;btn&quot;&gt;Cancel&lt;/button&gt;
+     &lt;button ng-click=&quot;save()&quot; class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+ &lt;/form&gt;
+ &lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th style=&quot;width: 250px&quot;&gt;Content&lt;/th&gt;
+        &lt;th style=&quot;width: 150px&quot;&gt;Category ID&lt;/th&gt;
+        &lt;th style=&quot;width: 55px&quot;&gt;
+            &lt;a ng-click=&quot;create()&quot;&gt;&lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr ng-repeat=&quot;post in posts | orderBy:'created_at'&quot;&gt;
+        &lt;td&gt;{{post.content}}&lt;/td&gt;
+        &lt;td&gt;{{post.category_id}}&lt;/td&gt;
+        &lt;td&gt;
+            &lt;a ng-click=&quot;edit(post)&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a ng-click=&quot;remove(post)&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+            </div>
 		</div>
 	  </div>
 	  <h3>Demo</h3>
       <div ng-include="'views/index.html'">
       </div>
+      <h1 id="users">&nbsp;</h1>
+      <script>
+        $(document).ready(function() {
+            prettyPrint();
+        });
+      </script>
   </body>
 <html>

@@ -1,14 +1,12 @@
 <form name="form">
-    <div class="control-group error" ng-class="{error: form.name.$invalid}">
+    <div class="control-group">
         <label>Name</label>
-        <input type="text" name="name" ng-model="user.name" required="">
-        <span ng-show="form.name.$error.required" class="help-inline">Required</span>
+        <input type="text" name="name" ng-model="user.name">
     </div>
-    <div class="control-group error" ng-class="{error: form.email.$invalid}">
+    <div class="control-group">
         <label>E-mail</label>
-        <input type="email" name="email" ng-model="user.email" required="">
-        <span ng-show="form.email.$error.required" class="help-inline">Required</span>
+        <input type="email" name="email" ng-model="user.email">
     </div>
-    <button ng-click="user = null" class="btn">Cancel</button>
-    <button ng-click="save()" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+    <button ng-click="cancel()" class="btn">Cancel</button>
+    <button ng-click="save()" class="btn btn-primary">Save</button>
 </form>

@@ -1,0 +1,22 @@
+<div ng-include="'./views/post/form.html'" ng-show="post"></div>
+<table>
+    <thead>
+    <tr>
+        <th style="width: 250px">Content</th>
+        <th style="width: 150px">Category ID</th>
+        <th style="width: 55px">
+            <a class="btn-link" ng-click="create()"><i class="icon-plus-sign"></i></a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="post in posts | orderBy:'created_at'">
+        <td>{{post.content}}</td>
+        <td>{{post.category_id}}</td>
+        <td>
+            <a class="btn-link" ng-click="edit(post)"><i class="icon-pencil"></i></a>
+            <a class="btn-link" ng-click="remove(post)"><i class="icon-remove"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>

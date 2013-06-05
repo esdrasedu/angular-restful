@@ -1,0 +1,14 @@
+<form name="form">
+    <div class="control-group">
+        <label>Content</label>
+        <textarea name="content" ng-model="post.content"></textarea>
+    </div>
+    <div class="control-group">
+        <label>Category</label>
+        <select name="category_id" ng-model="post.category_id">
+            <option ng-repeat="category in categories" value="{{category.id}}" ng-selected="category.id==post.category_id">{{category.color}}</option>
+        </select>
+    </div>
+    <button ng-click="cancel()" class="btn">Cancel</button>
+    <button ng-click="save()" class="btn btn-primary">Save</button>
+</form>

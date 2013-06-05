@@ -2,10 +2,10 @@
 <table>
     <thead>
     <tr>
-        <th>Name</th>
-        <th>E-mail</th>
-        <th>
-            <a ng-click="create()"><i class="icon-plus-sign"></i></a>
+        <th style="width: 250px">Name</th>
+        <th style="width: 150px">E-mail</th>
+        <th style="width: 55px">
+            <a class="btn-link" ng-click="create()"><i class="icon-plus-sign"></i></a>
         </th>
     </tr>
     </thead>
@@ -14,8 +14,9 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>
-            <a ng-click="edit(user)"><i class="icon-pencil"></i></a>
-            <a ng-click="remove(user)"><i class="icon-remove"></i></a>
+            <a class="btn-link" href="#/users/{{user.id}}/posts" title="Posts"><i class="icon-list"></i></a>
+            <a class="btn-link" ng-click="edit(user)" title="Edit"><i class="icon-pencil"></i></a>
+            <a class="btn-link" ng-click="remove(user)" title="Remove"><i class="icon-remove"></i></a>
         </td>
     </tr>
     </tbody>
