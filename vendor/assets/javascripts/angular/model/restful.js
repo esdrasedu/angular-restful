@@ -252,9 +252,15 @@
                         });
                         httpConfig.url = baseURL + httpConfig.url + route.getUrl(paramsMerge, action.url);
                         httpConfig.params = route.getParams(paramsMerge, action.url);
+                        if( !httpConfig.headers ){
+                            httpConfig.headers = {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            };
+                        }
+
 
                         function markResolved() { value.$resolved = true; }
-
                         promise = $http(httpConfig);
                         value.$resolved = false;
 
@@ -267,7 +273,9 @@
                                 if (action.isArray) {
                                     value.length = 0;
                                     forEach(data, function(item) {
-                                        value.push(new Restful(item));
+                                        var rest = new Restful(item);
+                                        rest.$resources = resources;
+                                        value.push(rest);
                                     });
                                 } else {
                                     copy(data, value);

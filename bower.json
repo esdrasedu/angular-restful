@@ -1,0 +1,20 @@
+{
+  "name": "angular-restful",
+  "version": "0.0.1",
+  "main": "./dist/angular-restful.min.js",
+  "description": "AngularJS factory for restful, with methods default [get, query, create, update, destroy] and with associations.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/esdrasedu/angular-restful.git"
+  },
+  "dependencies": {
+    "angular": "*"
+  },
+  "ignore": [
+    "node_modules",
+    "components",
+    "lib",
+    "test",
+    "vendor"
+  ]
+}
