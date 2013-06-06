@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    angular-restful (0.0.1)
+    angular-restful (0.0.2)
 
 GEM
   remote: https://rubygems.org/

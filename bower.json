@@ -1,7 +1,7 @@
 {
   "name": "angular-restful",
-  "version": "0.0.1",
-  "main": "./dist/angular-restful.min.js",
+  "version": "0.0.2",
+  "main": "./dist/angular-restful.js",
   "description": "AngularJS factory for restful, with methods default [get, query, create, update, destroy] and with associations.",
   "repository": {
     "type": "git",
