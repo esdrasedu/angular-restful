@@ -5,6 +5,7 @@
 .sass-cache
 capybara-*.html
 .rspec
+/components/
 /.bundle
 /vendor/bundle
 /log/*
