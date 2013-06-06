@@ -111,7 +111,7 @@ angular.module('app', ['restful'])
           <tr>
             <td>$defaultActions</td>
             <td>Object</td>
-            <td>{</br>'get':{method:'GET'},</br>'query':{method:'GET', isArray:true},</br>'create':{method:'POST'},</br>'update':{method:'PUT'},</br>'destroy':{metresourcehod:'DELETE'</br>}</td>
+            <td>{</br>'get':{method:'GET'},</br>'query':{method:'GET', isArray:true},</br>'create':{method:'POST'},</br>'update':{method:'PUT'},</br>'destroy':{method:'DELETE'</br>}</td>
             <td>These methods are default of resource rails, can be modified before you create restful</td>
           </tr>
           <tr>
@@ -129,7 +129,7 @@ angular.module('service', ['restful'])
 	return $restful('/user', {except:['query']});
 }])
 .factory('Post', ['$restful', function($restful) {
-	return $restful('/posts/:id');
+	return $restful('/posts/:id', {params:{id:'@id'}});
 }]);
 </pre>
       <h4>Options</h4>
@@ -182,8 +182,8 @@ angular.module('app', ['service'])
 	var user = new User();
 	var post = new Post({contet:'Test restful'});
 	var post = post.$create([user], function(){
-		post.$destroy();
-	});
+		post.$destroy(); //DELETE //localhost/user/post/1
+	}); //POST //localhost/user/post
 });
 </pre>
       <h4>Options</h4>
