@@ -5,22 +5,18 @@
     <title>Angular-Restful</title>
     <meta name="description" content="">
     <meta name="author" content="Esdras Eduardo">
-    
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-	
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap.css" />
+    <script type="text/javascript" src="components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
 
+    <script type="text/javascript" src="components/google-code-prettify/src/prettify.js"></script>
     <link type="text/css" rel="stylesheet" href="css/prettify.css" />
-   	<script type="text/javascript" src="js/prettify.js"></script>
 
-	<script type="text/javascript" src="restful.js"></script>
+    <script type="text/javascript" src="restful.js"></script>
 
-	<script type="text/javascript" src="apps/angular-restful.js"></script>
+    <script type="text/javascript" src="apps/angular-restful.js"></script>
     <script type="text/javascript" src="controllers/UserController.js"></script>
     <script type="text/javascript" src="controllers/PostController.js"></script>
     <script type="text/javascript" src="services/angular-restful.js"></script>
@@ -55,7 +51,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="hero-unit center hidden-phone" id="home">
+      <div class="hero-unit center" id="home">
         <h1>Angular-Restful</h1>
         <p>Angular factory for restful, simple and easy.</p>
         <p></p>
@@ -63,7 +59,6 @@
         <a class="btn btn-primary btn-large" target="_blank" href="https://github.com/esdrasedu/angular-restful/tags"><i class="icon-download-alt icon-white"></i> Download</a>
         <span class="disabled">version {{gem.version}}</span> 
       </div>
-      <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
       <h1 id="install">&nbsp;</h1>
       <h1>Install</h1>
       <h3>Gem</h3>
@@ -74,10 +69,14 @@ gem install angular-restful
 	  <pre class="prettyprint linenums">
 gem "angular-restful"
 </pre>
+      <h3>Bower</h3>
+	  <pre class="prettyprint linenums">
+bower install angular-restful
+</pre>
       <h3>Manual</h3>
       <p>You can install manually, but is not recommended</p>
 	  <pre class="prettyprint linenums">
-&lt;script src=&quot;lib/maskedinput/jquery.maskedinput.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/angular-restful/current_version/angular-restful-min.js&quot;&gt;&lt;/script&gt;
 </pre>
 	  <h1 id="config">&nbsp;</h1>
       <h1>Config</h1>
