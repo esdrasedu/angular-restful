@@ -1,10 +1,3 @@
-/**
- * AngularJS factory for restful.
- * @version v0.0.3 - 2013-06-07
- * @link https://esdrasedu.github.io/angular-restful
- * @author Esdras Eduardo <esdrasedu@gmail.com>
- * @license MIT License, http://www.opensource.org/licenses/MIT
- */
 angular.module('restful', ['ng'])
     .provider('$routeRestful', RouteRestfulProvider)
     .provider('$restful', RestfulProvider);

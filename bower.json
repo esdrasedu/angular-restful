@@ -1,6 +1,6 @@
 {
   "name": "angular-restful",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/angular-restful.js",
   "description": "AngularJS factory for restful, with methods default [get, query, create, update, destroy] and with associations.",
   "repository": {
@@ -8,13 +8,14 @@
     "url": "git://github.com/esdrasedu/angular-restful.git"
   },
   "dependencies": {
-    "angular": "*"
+    "angular": "1.0.7",
+    "angular-mocks": "1.0.7"
   },
   "ignore": [
     "node_modules",
     "components",
-    "lib",
     "test",
-    "vendor"
+    "src",
+    "*.*"
   ]
 }

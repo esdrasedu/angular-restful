@@ -10,14 +10,11 @@ basePath = './';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'test/lib/javascripts/angular/angular.min.js',
-  'test/lib/javascripts/angular/angular-bootstrap.min.js',
-  'test/lib/javascripts/angular/angular-loader.min.js',
-  'test/lib/javascripts/angular/angular-sanitize.min.js',
-  'test/lib/javascripts/angular/angular-mocks.js',
-  'test/lib/javascripts/matchers/matchers.js',
-  'vendor/assets/javascripts/angular/model/restful.js',
-  'test/unit/javascripts/angular/model/*Spec.js'
+  'components/angular/angular.min.js',
+  'components/angular-mocks/angular-mocks.js',
+  'test/lib/javascripts/matchers/*.js',
+  'src/*.js',
+  'test/unit/*Spec.js'
 ];
 
 

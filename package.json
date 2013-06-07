@@ -1,0 +1,41 @@
+{
+  "name": "angular-restful",
+  "description": "AngularJS factory for restful.",
+  "version": "0.0.3",
+  "homepage": "https://esdrasedu.github.io/angular-restful",
+  "author": "Esdras Eduardo <esdrasedu@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/esdrasedu/angular-restful.git"
+  },
+  "keywords": [
+    "angular",
+    "restful",
+    "resource",
+    "rest",
+    "api"
+  ],
+  "maintainers": [
+    {
+      "name": "Esdras Eduardo",
+      "website": "https://esdrasedu.github.com"
+    }
+  ],
+  "dependencies": {},
+  "engines": {
+    "node": "~0.10"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-karma": "~0.4.4",
+    "grunt-conventional-changelog": "~0.1.0",
+    "grunt-zip": "~0.9.0",
+    "grunt": "~0.4.1",
+    "shelljs": "~0.1.4"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  }
+}

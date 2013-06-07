@@ -1,13 +1,27 @@
 'use strict';
 describe("singular-restful", function() {
 
-    var $restful, CreditCard, callback, $httpBackend;
+    var $restful, $restfulWithList, $restfulWithBase, CreditCard, callback, $httpBackend;
 
-    beforeEach(module('restful'));
+    beforeEach(module('restful', function($provide){
+
+        var whitList = new RestfulProvider();
+        whitList.actions({
+            list: { method: 'GET', isArray: true, params: { limit: 30} }
+        });
+        $provide.provider('$restfulWithList', whitList);
+
+        var whitBase = new RestfulProvider();
+        whitBase.url('http://localhost:3000');
+        $provide.provider('$restfulWithBase', whitBase);
+
+    }));
 
     beforeEach(inject(function($injector) {
         $httpBackend = $injector.get('$httpBackend');
         $restful = $injector.get('$restful');
+        $restfulWithList = $injector.get('$restfulWithList');
+        $restfulWithBase = $injector.get('$restfulWithBase');
         CreditCard = $restful('/CreditCard/:id:verb', {params:{id:'@id.key'}, actions:{
             charge:{
                 method:'post',
@@ -30,7 +44,6 @@ describe("singular-restful", function() {
     afterEach(function() {
         $httpBackend.verifyNoOutstandingExpectation();
     });
-
 
     it("should build default actions", function() {
         var R = $restful();
@@ -79,10 +92,19 @@ describe("singular-restful", function() {
         $restful('URL').query();
     });
 
-    it('should create no route with $baseURL', function() {
-        $restful.$baseURL = "http://localhost:3000";
-        var Parent = $restful('/Parent');
-        var ParentPort = $restful('/Parent', {baseURL:"http://localhost:4000"});
+    it('should create default action List', function() {
+        var Parent = $restfulWithList('/Parent');
+        expect(typeof Parent.list).toBe('function');
+        expect(typeof Parent.get).toBe('function');
+        $httpBackend.when('GET', '/Parent?limit=30').respond('{}');
+        Parent.list();
+    });
+
+    it('should create no route with baseURL', function() {
+        var Parent = $restfulWithBase('/Parent');
+        var ParentPort = $restfulWithBase('/Parent', {
+            baseURL:"http://localhost:4000"
+        });
 
         $httpBackend.when('GET', 'http://localhost:3000/Parent').respond('{}');
         $httpBackend.when('GET', 'http://localhost:4000/Parent').respond('{}');
