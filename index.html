@@ -57,18 +57,10 @@
         <p></p>
         <a class="btn btn-large" target="_blank" href="https://github.com/esdrasedu/angular-restful"><i class="icon-download-alt"></i>Github project<br></a>
         <a class="btn btn-primary btn-large" target="_blank" href="https://github.com/esdrasedu/angular-restful/tags"><i class="icon-download-alt icon-white"></i> Download</a>
-        <span class="disabled">version {{gem.version}}</span> 
+        <span class="disabled">version {{version}}</span>
       </div>
       <h1 id="install">&nbsp;</h1>
       <h1>Install</h1>
-      <h3>Gem</h3>
-	  <pre class="prettyprint linenums">
-gem install angular-restful
-</pre>
-	  <h3>Bundle</h3>
-	  <pre class="prettyprint linenums">
-gem "angular-restful"
-</pre>
       <h3>Bower</h3>
 	  <pre class="prettyprint linenums">
 bower install angular-restful
@@ -92,12 +84,14 @@ angular.module('yourModule', ['restful']);
 	  <h3>$restful</h3>
       <pre class="prettyprint linenums">
 angular.module('app', ['restful'])
-.run(function($restful){
-	$restful.$baseURL = 'http://localhost:3000';
-	$restful.$defaultActions['list'] = {method:'GET', isArray:true, params:{limit: 30}};
+.config(function ($resfulProvider) {
+  $resfulProvider.url('http://localhost:3000');
+  $restfulProvider.actions({
+    list: { method: 'GET', isArray: true, params: { limit: 30} }
+  });
 });
 </pre>
-      <h4>Attributes</h4>
+      <h4>Config</h4>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -109,13 +103,13 @@ angular.module('app', ['restful'])
         </thead>
         <tbody>
           <tr>
-            <td>$defaultActions</td>
+            <td>actions</td>
             <td>Object</td>
             <td>{</br>'get':{method:'GET'},</br>'query':{method:'GET', isArray:true},</br>'create':{method:'POST'},</br>'update':{method:'PUT'},</br>'destroy':{method:'DELETE'</br>}</td>
             <td>These methods are default of resource rails, can be modified before you create restful</td>
           </tr>
           <tr>
-            <td>$baseURL</td>
+            <td>url</td>
             <td>String</td>
             <td>""</td>
             <td>Url based of restful</td>

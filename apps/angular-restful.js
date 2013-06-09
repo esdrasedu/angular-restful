@@ -1,5 +1,7 @@
 angular.module('angular-restful', ['angular-restful.service'])
-.config(function($httpProvider, $routeProvider, $locationProvider, $anchorScrollProvider) {
+.config(function($httpProvider, $routeProvider, $locationProvider, $anchorScrollProvider, $restfulProvider) {
+
+    $restfulProvider.url('http://angular-restful-6072.sae1.actionbox.io:3000');
 
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -19,7 +21,7 @@ angular.module('angular-restful', ['angular-restful.service'])
         controller: PostController
     });
 })
-.run(function($rootScope, $restful, $location, $route, Gem, $anchorScroll){
+.run(function($rootScope, $location, $route, $anchorScroll, GitHub){
     $rootScope.breadcrumb = [];
     $rootScope.defaultRoutes = $route.routes.current;
     $rootScope.$on('$locationChangeSuccess', function(event, current, previous){
@@ -46,6 +48,7 @@ angular.module('angular-restful', ['angular-restful.service'])
         $location.path($location.path().split('/').splice(1, (indice+1)).join('/')).replace();
     };
 
-    $restful.$baseURL = 'http://angular-restful-6072.sae1.actionbox.io:3000';
-    $rootScope.gem = Gem.get();
+    var tags = GitHub.tags(function(){
+        $rootScope.version = tags[0].name;
+    });
 });
