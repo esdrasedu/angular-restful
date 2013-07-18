@@ -84,8 +84,8 @@ angular.module('yourModule', ['restful']);
 	  <h3>$restful</h3>
       <pre class="prettyprint linenums">
 angular.module('app', ['restful'])
-.config(function ($resfulProvider) {
-  $resfulProvider.url('http://localhost:3000');
+.config(function ($restfulProvider) {
+  $restfulProvider.url('http://localhost:3000');
   $restfulProvider.actions({
     list: { method: 'GET', isArray: true, params: { limit: 30} }
   });
